@@ -5,7 +5,7 @@ class CompanyModel {
   final String logo;
   final int averagePrice;
   final String description;
-  final List<String> carPics;
+  final List<dynamic> carPics;
 
   CompanyModel({
     required this.id,
@@ -17,7 +17,7 @@ class CompanyModel {
     required this.carPics,
   });
 
-  factory CompanyModel.fromJson(Map<String, Object?> json) {
+  factory CompanyModel.fromJson(Map<String, dynamic> json) {
     return CompanyModel(
       id: json["id"] as int? ?? 0,
       carModel: json["car_model"] as String? ?? "",
@@ -25,7 +25,7 @@ class CompanyModel {
       establishedYear: json["established_year"] as int? ?? 0,
       averagePrice: json["average_price"] as int? ?? 0,
       description: json["description"] as String? ?? "",
-      carPics: (json["data"] as List<String>),
+      carPics: (json["car_pics"] as List<dynamic>?) ?? [],
     );
   }
 }

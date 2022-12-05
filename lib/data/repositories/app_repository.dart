@@ -12,5 +12,5 @@ class AppRepository {
   late ApiService _apiService;
 
   Future<CompaniesModel> getCompaniesData() => _apiService.getAllCompany();
-  Future<CompanyModel> getCompanyInfo() => _apiService.getSingleCompany(id: 0);
+  Future<CompanyModel> getCompanyInfo({required int id}) => _apiService.getSingleCompany(id: id);
 }

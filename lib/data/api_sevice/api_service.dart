@@ -9,8 +9,7 @@ class ApiService {
     try {
       Response response = await http
           .get(Uri.parse("https://easyenglishuzb.free.mockoapp.net/companies"));
-      if (response.statusCode >= 200 && response.statusCode < 300) {
-        print(response.body.toString());
+      if (response.statusCode >= 200) {
         return CompaniesModel.fromJson(jsonDecode(response.body));
       } else {
         throw Exception();
@@ -26,7 +25,6 @@ class ApiService {
       Response response = await http
           .get(Uri.parse("https://easyenglishuzb.free.mockoapp.net/companies/$id"));
       if (response.statusCode >= 200 && response.statusCode < 300) {
-        print(response.body.toString());
         return CompanyModel.fromJson(jsonDecode(response.body));
       } else {
         throw Exception();
