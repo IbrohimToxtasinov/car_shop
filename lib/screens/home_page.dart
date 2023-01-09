@@ -47,7 +47,7 @@ class _HomePageState extends State<HomePage> {
                           padding: const EdgeInsets.only(bottom: 20),
                           child: InkWell(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (_) => InfoPage(id: companiesViewModel.companies!.data[index].id,)));
+                              Navigator.push(context, MaterialPageRoute(builder: (_) => InfoPage(id: companiesViewModel.companies!.data[index].id, companyName: companiesViewModel.companies!.data[index].carModel,)));
                             },
                             child: Container(
                               margin:
